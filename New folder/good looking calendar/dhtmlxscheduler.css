@@ -1,0 +1,181 @@
+.dhx_cal_container.dhx_mini_calendar {
+box-sizing: border-box;
+border: 1px solid #CECECE;
+box-shadow: 2px 2px 5px #CCC;
+border-radius: 3px;
+}
+
+.dhx_cal_container {
+background-color: white;
+}
+.dhx_mini_calendar {
+-webkit-user-select: none;
+}
+.dhx_cal_container {
+font-family: Tahoma;
+font-size: 8pt;
+position: relative;
+overflow: hidden;
+}
+.dhx_mini_calendar .dhx_year_month {
+line-height: 20px;
+height: 25px;
+font-size: 14px;
+}
+.dhx_mini_calendar .dhx_year_month{
+border-color: transparent;
+}
+.dhx_mini_calendar .dhx_year_month {
+border: 1px solid #CECECE;
+font-family: Arial;
+}
+.dhx_year_month {
+padding-top: 3px;
+text-align: center;
+vertical-align: middle;
+}
+.dhx_mini_calendar .dhx_cal_prev_button {
+top: 8px!important;
+}
+.dhx_mini_calendar .dhx_cal_prev_button, .dhx_mini_calendar .dhx_cal_next_button {
+border: 0;
+height: 20px;
+}
+.dhx_cal_prev_button {
+right: 61px;
+background: url(imgs_dhx_terrace/arrow_left.png) no-repeat center center;
+border-top-left-radius: 5px;
+border-bottom-left-radius: 5px;
+}
+.dhx_cal_prev_button, .dhx_cal_next_button {
+width: 46px;
+}
+.dhx_cal_prev_button, .dhx_cal_next_button {
+color: #454544;
+line-height: 30px;
+background: none;
+}
+.dhx_cal_prev_button {
+background-position: 0 0;
+cursor: pointer;
+}
+.dhx_mini_calendar .dhx_cal_next_button {
+top: 8px!important;
+}
+.dhx_cal_next_button {
+background: url(imgs_dhx_terrace/arrow_right.png) no-repeat center center;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+}
+.dhx_cal_next_button {
+background-position: -30px 0;
+cursor: pointer;
+}
+.dhx_mini_calendar .dhx_year_week {
+border-bottom: 1px solid #CECECE;
+padding-top: 1px;
+}
+.dhx_year_week {
+position: relative;
+}
+.dhx_mini_calendar .dhx_scale_bar {
+border-width: 0;
+}
+.dhx_mini_calendar .dhx_year_body {
+border-color: transparent;
+}
+.dhx_scale_bar {
+font: 11px/16px Arial;
+color: #767676;
+padding-top: 2px;
+background-color: white;
+}
+.dhx_scale_bar {
+border-left: 1px solid #CECECE;
+}
+.dhx_scale_bar {
+position: absolute;
+text-align: center;
+}
+.dhx_scale_bar_last {
+border-right: 1px solid #CECECE;
+}
+.dhx_mini_calendar .dhx_year_body {
+padding-top: 1px;
+}
+.dhx_mini_calendar .dhx_year_body {
+border-color: transparent;
+}
+.dhx_year_body {
+border-left: 1px solid #CECECE;
+}
+table[Attributes Style] {
+border-spacing: 0px;
+}
+table {
+display: table;
+border-collapse: separate;
+border-color: gray;
+}
+tbody {
+display: table-row-group;
+vertical-align: middle;
+border-color: inherit;
+}
+table {
+border-collapse: separate;
+border-spacing: 2px;
+border-color: gray;
+}
+tr {
+display: table-row;
+vertical-align: inherit;
+border-color: inherit;
+}
+td {
+display: table-cell;
+vertical-align: inherit;
+}
+.dhx_mini_calendar .dhx_month_head {
+margin: 2px 2px;
+}
+.dhx_mini_calendar .dhx_calendar_click {
+border-radius: 7px;
+}
+.dhx_mini_calendar .dhx_month_head {
+padding-right: 0;
+text-align: center;
+}
+.dhx_mini_calendar .dhx_month_head, .dhx_mini_calendar .dhx_year_month, .dhx_mini_calendar .dhx_month_body, .dhx_mini_calendar .dhx_scale_bar, .dhx_mini_calendar .dhx_year_body {
+border-color: transparent;
+}
+.dhx_mini_calendar .dhx_calendar_click {
+background-color: #C2D5FC;
+}
+.dhx_mini_calendar .dhx_month_head {
+cursor: pointer;
+}
+.dhx_month_head {
+height: 21px;
+padding-top: 0;
+font: 12px/21px Arial;
+color: #362d26;
+border-right: 1px solid #CECECE;
+}
+.dhx_year_body .dhx_month_body {
+height: 0;
+overflow: hidden;
+}
+.dhx_month_body {
+border-right: 1px solid #CECECE;
+border-bottom: 1px solid #CECECE;
+}
+.dhx_month_body {
+background-color: #FFF;
+}
+.dhx_after .dhx_month_head {
+cursor: default;
+}
+.dhx_year_body .dhx_after .dhx_month_head {
+color: #E2E3E6!important;
+}

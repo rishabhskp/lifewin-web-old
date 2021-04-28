@@ -1,0 +1,218 @@
+<!--
+require_once("php/connect.php");
+session_start();
+include_once("php/cookielogin.php");
+if($_SESSION["loggedin"]!="yes")
+	header("Location: login.php");-->
+<!doctype html>
+<HTML>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<HEAD>
+		<!-- <link rel="stylesheet" href="lists.css"> -->
+		<style>
+		.toolbar {
+			float: right;
+		}
+		.footer {
+		    background: white;
+		    position: fixed;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		    height: 50px;
+		}    
+		.tickDay a{
+			background-color : #6eafbf !important;
+		    background-image :none !important;
+		    color: White !important;
+		}
+		</style>
+		<link rel="stylesheet" href="jquery/jquery-ui.css">
+		<link rel="stylesheet" href="icomoon/style.css">
+		<script src="jquery/jquery-2.0.3.min.js"></script>
+		<script src="jquery/jquery-ui.js"></script>    
+		<script src="jquery/jquery.ui.touch-punch.min.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="simple-sidebar.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="custom.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+		<script src="goal.js"></script>
+		<script src="stopwatch.js"></script>
+		<link rel="stylesheet" href="fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+		<script type="text/javascript" src="fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('.datepicker').datepicker({
+					inline: true,
+					//nextText: '&rarr;',
+					//prevText: '&larr;',
+					showOtherMonths: true,
+					//dateFormat: 'dd MM yy',
+					dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+					//showOn: "button",
+					//buttonImage: "img/calendar-blue.png",
+					//buttonImageOnly: true,
+				});
+			});
+		</script>
+		<!--<script src="angularJS/angular.min.js"></script>-->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("a.fancybox").fancybox({
+					'width'	: '75%',
+					'height': '75%',
+					type:"iframe",
+					'hideOnContentClick': false
+				});
+			});
+		</script>
+		<script>
+			if (localStorage.getItem("list") === null){
+				localStorage.setItem("background",bg1);
+			}
+			if (localStorage.getItem("background")==bg1){
+				document.getElementById("maincontentofwebsite").style.background="url(img/bg1.jpg)";
+			}
+			if (localStorage.getItem("background")==bg2){
+				document.getElementById("maincontentofwebsite").style.background="url(img/bg2.jpg)";
+			}
+			if (localStorage.getItem("background")==bg3){
+				document.getElementById("maincontentofwebsite").style.background="url(img/bg3.jpg)";
+			}
+			if (localStorage.getItem("background")==bg4){
+				document.getElementById("maincontentofwebsite").style.background="url(img/bg4.jpg)";
+			}
+			if (localStorage.getItem("background")==bg5){
+				document.getElementById("maincontentofwebsite").style.background="url(img/bg5.jpg)";
+			}
+			if (localStorage.getItem("background")==bg6){
+				document.getElementById("maincontentofwebsite").style.background="url(img/bg6.jpg)";
+			}
+		</script>
+	</HEAD>
+	<BODY>
+	<!-- Popover when a list item is clicked -->
+	<!-- SideBar From: http://bootply.com/88026 -->
+	<div class="page-container">
+	<!-- top navbar. Fixed on top of the screen even when scrolling down-->
+	    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	       	<div class="container">
+				<!--Navbar modified with use of inputgroup buttons From: http://getbootstrap.com/components/#input-groups-->
+	    		<div class="navbar-header input-group">
+				<!--class="navbar-toggle" removed from "button" so that it is visible at all times and not just when the screen size is short -->
+					<span class="input-group-btn hiddenclass">
+	           			<button type="button" class="navbar-toggle btn btn-default" data-toggle="offcanvas" data-target=".sidebar-nav">
+					 		<span class="glyphicon glyphicon-list"></span>
+	           			</button>
+					</span>
+			   		<a class="navbar-brand" id="listname" href="#"></a>
+			   		<span id="daily" class="input-group-addon"></span>
+			   		<span id="weekly" class="input-group-addon"></span>
+					<span class="input-group-btn">
+						<!--Dropup on QuickAdd button from: http://getbootstrap.com/components/#btn-dropdowns-dropup -->
+						<div class="btn-group dropup">
+	  						<button type="button" class="btn btn-default dropdown-toggle b_fix icon-plus" data-toggle="dropdown">
+							</button>
+	  							<ul class="dropdown-menu" role="menu">
+	  								<li data-toggle="modal" data-target="#quickadd"><a href="#">Enter Value</a></li>
+	  								<li class="divider"></li>
+	   								<li><a onclick="addPoints(2);" href="#">2 points</a></li>
+	  								<li><a onclick="addPoints(5);" href="#">5 points</a></li>
+	  								<li><a onclick="addPoints(10);" href="#">10 points</a></li>
+	  							</ul>
+	  					</div>
+	  				</span>
+	    		</div>
+	       	</div>
+	    </div>
+		<div class="container">
+	      	<div class="row row-offcanvas row-offcanvas-left">
+	        	<!-- sidebar -->
+	        	<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+	            	<ul class="nav nav-pills nav-stacked">
+						<!-- class="active" and "sidebar-brand" to be used properly -->
+				  		<li><a onclick="list('Goals');" href="#">Goals</a></li>
+	              		<li><a onclick="list('Tasks');"href="#">Tasks</a></li>
+	              		<li><a onclick="list('Dailies');" href="#">Daily</a></li>
+				  		<li><a onclick="list('Winstate');" href="#">Yes! I Did It!</a></li>
+				  		<li><a onclick="list('Scoreboard');" href="#">Scoreboard</a></li>
+				  		<!--<li><a class="fancybox" href="settings.html">Settings</a></li>
+				  		<li><a onclick="sync();" href="#">Sync</a></li>
+				  		<li><a onclick="clearlist();" href="#">Add</a></li>-->
+	            	</ul>
+	        	</div>
+				<div class="cols-xs-12 col-sm-9" id="maincontentofwebsite">
+					<br>
+					<!-- Main Content of the whole website -->
+					<form id="input" onSubmit="save(); return false;" >
+						<!-- Input styling From: http://getbootstrap.com/components/#input-groups -->
+						<div class="input-group">
+							<input type="text" class="form-control" name="newEntry" id="newEntry" placeholder="New Goal">
+							<span class="input-group-btn">
+							<button class="btn btn-default" type="button" onClick="save(); return false;">+</button></span>
+						</div>
+					</form>
+					<!--1. Doesn't gets included in goalsNames 2. No list item can be dragged above -->
+					<ul class="sortable list-group"  style="margin-top:50px;">
+						<li class="tags list-group-item" id="tag0">
+							<!--Collapse/Show List Icons removed - they were confusing the users - users think that clicking on them will reveal what they are to do for the day
+							<span id="tagIcon0"></span>-->
+							<!--Sperate span for the text because otherwise the "badge" class span would get deleted!-->
+							<span id="firstTag"></span>
+							<span id="tagCount0" class="badge"></span>
+						</li>
+					</ul>
+					<!--"list-group" class is a requirement for bootstrap-->
+					<ul id="list" class="sortable list-group"></ul>
+						<!-- Footer to have the QuickAdd, Timer, Stopwatch, Meassage Text and Stop buttons -->
+						<div class="footer">
+							<!--From: http://getbootstrap.com/components/#input-groups -->
+								<div class="input-group">
+									<span class="input-group-btn">
+	  									<button type="button" class="btn btn-default b_fix icon-stopwatch" onclick="start(0);">
+	   										<!-- Halfling used earlier
+	  										<span class="glyphicon glyphicon-time"></span>-->
+	  									</button>
+	  								</span>
+									<span class="input-group-btn">
+	  									<button type="button" class="btn btn-default b_fix icon-clock" onclick="start(1);">
+	   										<!-- Halfling used earlier
+	  										<span class="glyphicon glyphicon-bell"></span>-->
+	  									</button>
+	  								</span>
+									<span id="time" class="form-control"></span>
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-default b_fix stop_fix" onclick="stop();" onmouseout="this.blur();">STOP</button>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	<!--</div>
+	</div>-->
+	<!-- I do not know why they are here so I'm commenting them out. -->
+	<!-- QuickAdd Implemented using Modal from: http://getbootstrap.com/javascript/#modals -->
+		<div class="modal fade" id="quickadd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  		<div class="modal-dialog">
+	    		<div class="modal-content">
+	      			<div class="modal-header">
+	        			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        			<h4 class="modal-title" id="myModalLabel">Quick Add</h4>
+	     	 		</div>
+	      			<div class="modal-body">
+						<form id="quickAdd" >
+							<input type="number" min="0" class="form-control" name="quickadd" id="points" placeholder="Points to Add">
+						</form>
+	      			</div>
+	      			<div class="modal-footer">
+	        			<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+	        			<button type="button" class="btn btn-primary" onclick="addPoints('quickAdd');" data-dismiss="modal">Save</button> <!--Send Message to addPoints() function to check the 	quickAdd's form's value -->
+	      			</div>
+	    		</div><!-- /.modal-content -->
+	  		</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	</BODY>
+</HTML>

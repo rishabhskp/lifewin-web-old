@@ -1,0 +1,135 @@
+<!--This document gets new Goals from the user, calculates no. of days left and saves data to localStorage-->
+<HTML>
+<HEAD>
+<!-- <link rel="stylesheet" href="lists.css"> -->
+<style>
+.footer {
+    background: white;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+}    
+.tickDay {
+	background-image:url('tick.jpg') !important;
+	background-repeat:repeat-x !important;
+    font-weight: bold !important;
+    background-color:#ad5 !important;
+}
+</style>
+<link rel="stylesheet" href="jquery/jquery-ui.css">
+<script src="jquery/jquery-2.0.3.min.js"></script>
+<script src="jquery/jquery-ui.js"></script>    
+<script src="jquery/jquery.ui.touch-punch.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="simple-sidebar.css" rel="stylesheet">
+<script src="tasks.js"></script>
+<script src="stopwatch.js"></script>
+</HEAD>
+<BODY>
+<!-- SideBar From: http://bootply.com/88026 -->
+<div class="page-container">
+<!-- top navbar. Fixed on top of the screen even when scrolling down-->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+       <div class="container">
+		<!--Navbar modified with use of inputgroup buttons From: http://getbootstrap.com/components/#input-groups-->
+    	<div class="navbar-header input-group">
+		<!--class="navbar-toggle" removed from "button" so that it is visible at all times and not just when the screen size is short -->
+		<span class="input-group-btn">
+           <button type="button" class="navbar-toggle btn btn-default" data-toggle="offcanvas" data-target=".sidebar-nav">
+             <!-- <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span> --->
+			 <span class="glyphicon glyphicon-list"></span>
+           </button>
+		</span>
+		   <a class="navbar-brand" href="#">Goals</a>
+		   <span class="day-points input-group-addon">00</span>
+		   <span class="week-points input-group-addon">00</span>
+    	</div>
+       </div>
+    </div>
+	
+	<div class="container">
+      <div class="row row-offcanvas row-offcanvas-left">
+        
+        <!-- sidebar -->
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+            <ul class="nav nav-pills nav-stacked">
+				<!-- class="active" and "sidebar-brand" to be used properly -->
+              <li><a href="#">Rishabh Poddar</a></li>
+              <li class="sidebar-brand"> <a href="#">Your Avatar Here!</a></li>
+			  <li><a onclick="list('goals');" href="#">Goals</a></li>
+              <li><a onclick="list('tasks');" href="#">Tasks</a></li>
+              <li><a onclick="list('habits');" href="#">Habits/Frequent</a></li>
+			  <li><a onclick="list('winstate');" href="#">Yes! I Did It!</a></li>
+			  <li><a onclick=";" href="#">Help</a></li>
+			  <li><a onclick=";" href="#">Settings</a></li>
+            </ul>
+        </div>
+	
+	<div class="cols-xs-12 col-sm-9">
+		<br>
+		<form id="input" onSubmit="save(); return false;" >
+		<!-- Input styling From: http://getbootstrap.com/components/#input-groups -->
+		<div class="input-group">
+		<input type="text" class="form-control" name="goal" id="goal" placeholder="New Goal">
+		<span class="input-group-btn">
+			<button class="btn btn-default" type="button" onClick="save(); return false;">+</button></span>
+		</div>
+		<!-- Duedate by which goal to be completed
+		<input type="date" name="date2" id="date2"></span><br>  -->
+		<!--Set to Present/Future. Now - present by default, future on when dragged to it.
+		<label>Active: </label><br>
+		<input type="radio" name="active" class="active" value="future">Future <br>
+		<input type="radio" name="active" class="active" value="present">Present <br> <br> 
+		<input type="submit"   value="submit"> -->
+		</form>
+		<!--<form name="show" onSubmit="del(); return false;">
+		<label>Old Goal: </label> <input type="text" name="goal2" id="goal2"><br>
+		<label>New Goal: </label> <input type="text" name="goal3" id="goal3"><br>
+		<input type="submit" value="submit">
+		</form> -->
+		<!--1. Doesn't gets included in goalsNames 2. No list item can be dragged above -->
+		<ul class="sortable list-group"><li class="list-group-item">
+		Present<span id="present-count" class="badge"></span>
+		</li>
+		</ul>
+		<!--"list-group" class is a requirement for bootstrap-->
+		<ul id="list" class="sortable list-group"></ul>
+		
+		
+		<div class="footer">
+<!--From: http://getbootstrap.com/components/#input-groups -->
+<div class="input-group">
+<span class="input-group-btn">
+  <button type="button" class="btn btn-default">
+  <input type="image" src="glyphicons_free/glyphicons/png/glyphicons_190_circle_plus.png">
+  <!-- Halfling used earlier
+  <span class="glyphicon glyphicon-plus"></span> -->
+  </button></span>
+<span class="input-group-btn">
+  <button type="button" class="btn btn-default" onclick="stopwatch();">
+  <input type="image" src="glyphicons_free/glyphicons/png/glyphicons_055_stopwatch.png">
+   <!-- Halfling used earlier
+  <span class="glyphicon glyphicon-time"></span>-->
+  </button></span>
+<span class="input-group-btn">
+  <button type="button" class="btn btn-default">
+  <input type="image" src="glyphicons_free/glyphicons/png/glyphicons_054_clock.png">
+   <!-- Halfling used earlier
+  <span class="glyphicon glyphicon-bell"></span>-->
+  </button></span>
+  <div>
+<span id="time"></span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</BODY>
+</HTML>

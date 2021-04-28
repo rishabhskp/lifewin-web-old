@@ -1,0 +1,677 @@
+QUESTION 1-a
+
+<html>
+<body>
+<b>Name: </b>Rishabh Poddar</br>
+<b>Age: </b>20</br>
+<b>Telephone: </b>9092024765</br>
+<b>Address: </b>53/79, Chinnamuthu Street, Nasyanoor Road, Erode - 638011</br>
+<b>Pin Code: </b>638011</br>
+<b>Email: </b>poddarrishabh@gmail.com</br>
+</body>
+</html>
+______________________________________________________________________________________________________
+
+QUESTION 1-b
+
+<HTML>
+<style>
+body {background-color:#b0c4de;}
+</style>
+<BODY>
+<p>
+<h3>Rishabh Poddar</h3>
+Hi, myself, Rishabh Poddar. I am an Independent Web Developer.
+</p>
+</BODY>
+</HTML>
+_____________________________________________________________________________________________________
+
+QUESTION 2-a
+
+<HTML>
+<BODY>
+<h3>My Likes: </h3>
+<ul>
+<li>Web Designing</li>
+<li>javaScript</li>
+<li>Game Design</li>
+</ul>
+</br>
+<h3>My Dislikes: </h3>
+<ul>
+<li>Waste of Time</li>
+<li>Negative Externalities</li>
+</ul>
+</br>
+<h3>My Previous semester GPAs: </h3>
+<ol>
+<li>7.8</li>
+<li>3</li>
+<li>8.3</li>
+<li>7.66</li>
+<li>8</li>
+</ol>
+</BODY>
+</HTML>
+________________________________________________________________________________________________
+
+QUESTION 2-b
+
+<html>
+<title>Activity 2.b</title>
+<head>
+<style>
+
+body {
+background-image:url('back1.png');
+background-repeat:x-repeat;
+} 
+.quote
+{
+text-align:center;
+}
+</style>
+</head>
+<body >
+<div id="container">
+<div id="quote" style="text-align:center;">
+<strong>Quotes</strong><br><br>
+"The only person you need to be better than is the person you were yesterday"<br>
+</div>
+
+<div id="left" style="float:left;">
+<span style="text-align:center"><strong>Best Movies</strong></span>
+<ul>
+<li>Movie 1</li></br>
+<li>Movie 2</li></br>
+<li>3</li></br>
+<li>4</li></br>
+</ul>
+</div>
+<div id="frame" frameborder="1"style="width:200px;float:center;">
+<strong>Details</strong><hr><br><br>
+<iframe width="200px"src="frame.html"></iframe><br><br>
+</div>
+</body>
+</html>
+
+-----------------------------------------------------------------------------------------------------------------------
+FRAME
+
+<html>
+<title>iFrame</title>
+<head>
+<style>
+body {
+background-image:url('back1.jpg');
+backgroud-repeat:x-repeat;
+background-position: center center;
+} 
+</style>  
+</head>
+<body>
+This is an iFrame. iFrames are used to embed one page into another. This is currently depreciated. I do not want to use this!<br>
+</body>
+</html>
+________________________________________________________________________________________________________________________
+
+QUESTION 2-c
+
+<HTML>
+<SCRIPT>
+function fun(entry){
+document.getElementById("trains").setAttribute('bgcolor','red');
+document.getElementById("fare"+entry).innerHTML = parseInt(entry)*100;
+}
+</SCRIPT>
+<BODY>
+<table border="1" id="trains">
+<tr>
+<th>Train No.</th>
+<th>Source</th>
+<th>Destination</th>
+<th>Depart</th>
+<th>Arrival</th>
+<th>Fare</th>
+</tr>
+<tr>
+<td>12345</td>
+<td>CBE</td>
+<td>MAS</td>
+<td>22:00</td>
+<td>08:10</td>
+<td id="fare1"><button onclick="fun(1); return false;">Fare</button></td>
+</tr>
+<tr>
+<td>12346</td>
+<td>DEL</td>
+<td>CBE</td>
+<td>22:00</td>
+<td>05:12</td>
+<td id="fare2"><button onclick="fun(2); return false;">Fare</button></td>
+</tr>
+<tr>
+<td>12347</td>
+<td>MAS</td>
+<td>DEL</td>
+<td>08:30</td>
+<td>12:45</td>
+<td id="fare3"><button onclick="fun(3); return false;">Fare</button></td>
+</tr>
+</table>
+</BODY>
+</HTML>
+___________________________________________________________________________________________
+
+QUESTION 3
+
+<HTML>
+<BODY>
+<form action="demo_form.asp">
+<input type="button" value="Click me" onclick="msg()"></br></br>
+<input type="checkbox" name="vehicle" value="Bike"> I have a bike<br></br></br>
+<input type="checkbox" name="vehicle" value="Car"> I have a car </br></br>
+Select your favorite color: <input type="color" name="favcolor"></br></br>
+Birthday: <input type="date" name="bday"></br></br>
+Birthday (date and time): <input type="datetime" name="bdaytime"></br></br>
+Birthday (date and time): <input type="datetime-local" name="bdaytime"></br></br>
+E-mail: <input type="email" name="usremail"></br></br>
+Select a file: <input type="file" name="img"> </br></br>
+<input type="hidden" name="country" value="Norway"> </br></br>
+<input type="image" src="img_submit.gif" alt="Submit"></br></br>
+Quantity (between 1 and 5): <input type="number" name="quantity" min="1" max="5"></br></br>
+<input type="password" name="pwd"></br></br>
+<input type="range" name="points" min="1" max="10"></br></br>
+<input type="reset"></br></br>
+Search Google: <input type="search" name="googlesearch"></br></br>
+<input type="submit"></br></br>
+Telephone: <input type="tel" name="usrtel"></br></br>
+First name: <input type="text" name="fname"><br></br></br>
+Last name: <input type="text" name="lname"><br> </br></br>
+Select a time: <input type="time" name="usr_time">'</br></br>
+Add your homepage: <input type="url" name="homepage"></br></br>
+Select a week: <input type="week" name="week_year"></br></br>
+<input type="submit">
+</form>
+
+<BODY>
+</HTML>
+_______________________________________________________________________________________________
+
+QUESTION 4
+
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE>EXPERIMENT-4</TITLE>
+<STYLE>
+header{
+margin:10px;
+background-color:#32F0FA;
+border-style:offset;
+text-align:left;
+padding-bottom:5px;
+}
+nav{
+width:90%;
+margin-left:10px;
+margin-top:35px;
+margin-right:10px;
+background-color:#32FCC8;
+borfer-style:outset;
+padding-right:90px;
+}
+article{
+margin:1%;
+width:70%;
+background-color:#428CE9;
+border-style:outset;
+height:420px;
+}
+setion{
+margin:10px;
+background-color:#F5A031;
+border-style:outset;
+padding-top:50px;
+padding-bottom:50px;
+}
+aside{
+margin-top:0%;
+margin-bottom:1%;
+margin-left:1%;
+margin-right:1%;
+background-color:#9455F2;
+border-style:outset;
+width:25%;
+float:right;
+}
+footer{
+margin:1%;
+background-color:#32F0FA;
+border-style:outset;
+text-align:right;
+padding:15px;
+}
+</STYLE>
+</HEADER>
+<BODY>
+<HEADER>RESUME
+<NAV>NAVIGATE</NAV>
+</HEADER>
+<ASIDE>ASIDE</ASIDE>
+<ARTICLE>
+<SECTION>
+NAME: RISHABH PODDAR
+</SECTION>
+<SECTION>AGE:20</SECTION>
+</ARTICLE>
+<FOOTER>FOOTER</FOOTER>
+</BODY>
+</HTML>
+_____________________________________________________________________________________________________
+
+QUESTION 5
+
+<DOCTYPE HTML>
+<HTML>
+<HEAD>
+<TITLE>EXPERIMENT-5</TITLE>
+<H1 ALIGN="CENTER">WEBPAGE</H1>
+</HEAD>
+<BODY>
+<DIV>
+<FIGURE ALIGN="CENTER">
+<IMAGE SCR="BLUE-WHALE.JPG" WIDTH="1000" HEIGHT="500">
+</FIGURE>
+</DIV>
+<DIV>
+<AUDIO CONTROLS>
+<SCOURESCR="RANDOM.MP3" TYPE="AUDIO/MPEG">
+YOUR BROUSER DOES NOT SUPPORS THE AUDIO TAG
+</AUDIO>
+</DIV>
+<DIV ALIGN="RIGHT">
+<CANVAS ID="FIRSTCANVAS"></CANVAS>
+<EMBED SCR="1.SWF"></EMBED>
+</DIV>
+</BODY>
+</HTML>
+_______________________________________________________________________________________________________________
+
+QUESTION 6
+
+<head>
+<title> Box Model</title>
+<style>
+body {background-color: green;
+background-repeat:repeat-y;
+background-position:center bottom;
+background-attachment:scroll;
+}
+#container {
+background: lightgray;
+width: 600px;
+margin: 0px auto;
+border: 2px solid red;}
+p { background: white;
+border: 20px groove red;
+margin-top: 20px;
+margin-right: 20px;
+margin-bottom: 20px;
+margin-left: 20px;
+padding-top: 20px;
+padding-right: 20px;
+padding-bottom: 20px;
+padding-left: 20px; }
+</style>
+<body>
+<h1> Perfect Box Model</h1>
+<div id="container">
+<p>U r using <font color = "blue"> BOX MODEL</font><br>
+with margin, padding, border and content</p>
+</div>
+</p>
+</body>
+</html>
+_______________________________________________________________________________________________
+
+QUESTION 7
+
+<html>
+	<head>
+		<title>CSS based drop-down menu</title>	
+	<style type="text/css">
+
+		ul {
+			font-family: Times New Roman;
+			font-size: 20px;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul li {
+			display: block;
+			position: relative;
+			float:left;
+		}
+		li ul { display: none; }
+		ul li a {
+			display: block;
+			text-decoration: none;
+			color: yellow;
+			border-top: 1px solid black;
+			padding: 5px 15px 5px 15px;
+			background: green;
+			margin-left: 1px;
+			
+		}
+		
+		ul li a:hover { background: red; }
+		li:hover ul { 
+			display: block; 
+			position: absolute;
+		}
+		li:hover li { 
+			float: none;
+			font-size: 15px;
+		}
+		li:hover a { background: blue; }
+		
+
+	</style>		
+	</head>
+	<body>
+	
+		<ul id="menu">
+			<li><a href="">Home</a></li> 
+		    <li><a href="">About</a> 
+		      <ul>
+		      	<li><a href="">The Team</a></li>
+		        <li><a href="">History</a></li> 
+		        <li><a href="">Vision</a></li> 
+		      </ul> 
+		    </li> 
+		    <li><a href="">Products</a> 
+		      <ul> 
+		        <li><a href="">lamborgini</a></li> 
+		        <li><a href="">ducati</a></li> 
+		        <li><a href="">BMW</a></li> 
+		        <li><a href="">Shiny Shelf</a></li> 
+		        <li><a href="">Invisible Nothing</a></li> 
+		      </ul> 
+		    </li>
+		    <li><a href="">Contact</a> 
+		      <ul> 
+		        <li><a href="">Online</a></li> 
+		        <li><a href="">Right Here</a></li> 
+		        <li><a href="">Somewhere Else</a></li> 
+		      </ul> 
+		    </li> 
+		</ul>	
+	
+	</body>
+</html>
+
+___________________________________________________________________________________________________
+
+QUESTION 8
+
+<html>
+	
+	<head>
+		<title>Activity 8</title>
+		<style>
+		
+			div
+			{
+				margin-left:20px;
+				padding:10px;
+				width:200px;
+			}
+			
+			.flo
+			{
+				margin-left:500px
+			}
+			
+			.b1
+			{
+				border-style:none;
+			}
+		
+			.b2
+			{
+				border-style:dotted;
+			}
+		
+			.b3
+			{
+				border-style:dashed;
+			}
+		
+			.b4
+			{
+				border-style:solid;
+			}
+		
+			.b5
+			{
+				border-style:double;
+			}
+		
+			.b6
+			{
+				border-style:groove;
+			}
+		
+			.b7
+			{
+				border-style:ridge;
+			}
+		
+			.b8
+			{
+				border-style:inset;
+			}
+		
+			.b9
+			{
+				border-style:outset;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="b1" align="center">
+			none
+		</div>
+		
+		<div class="b2 flo" align="center">
+			dotted
+		</div>
+		
+		<div class="b3" align="center">
+			dashed
+		</div>
+		
+		<div class="b4 flo" align="center">
+			solid
+		</div>
+		
+		<div class="b5" align="center">
+			double
+		</div>
+		
+		<div class="b6 flo" align="center">
+			groove
+		</div>
+		
+		<div class="b7" align="center">
+			ridge
+		</div>
+		
+		<div class="b8 flo" align="center">
+			inset
+		</div>
+		
+		<div class="b9" align="center">
+			outset
+		</div>
+	</body>
+</html>
+
+_________________________________________________________________________________________________
+
+QUESTION 9
+
+<html>
+	<head>
+		<title>Activity 9</title>
+		
+		<style>
+			
+			table
+			{
+				border-collapse:collapse;
+				border:2px solid black;
+			}
+			
+			td,th
+			{
+				border:1px solid black;
+			}
+			
+			tr:hover
+			{
+				background-color:red;
+			}
+			
+			.col
+			{
+				background-color:orange;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		<table>
+			<tr class="col">
+				<th>#</th>
+				<th>IMDB Top 10 Movies</th>
+				<th>Year</th>
+			</tr>
+			
+			<tr>
+				<td>1</td>
+				<td>The Shawshank Redemption</td>
+				<td>1994</td>
+			</tr>
+			
+			<tr>
+				<td>2</td>
+				<td>The Godfather</td>
+				<td>1972</td>
+			</tr>
+			
+			<tr>
+				<td>3</td>
+				<td>The Godfather: Part II</td>
+				<td>1974</td>
+			</tr>
+			
+			<tr>
+				<td>4</td>
+				<td>The Good, the Bad and the Ugly</td>
+				<td>1966</td>
+			</tr>
+			
+			<tr>
+				<td>5</td>
+				<td>Pulp Fiction</td>
+				<td>1994</td>
+			</tr>
+			
+			<tr>
+				<td>6</td>
+				<td>12 Angry Men</td>
+				<td>1957</td>
+			</tr>
+			
+			<tr>
+				<td>7</td>
+				<td>Schindler's List</td>
+				<td>1993</td>
+			</tr>
+			
+			<tr>
+				<td>8</td>
+				<td>One Flew Over the Cuckoo's Nest</td>
+				<td>1975</td>
+			</tr>
+			
+			<tr>
+				<td>9</td>
+				<td>The Dark Knight</td>
+				<td>2008</td>
+			</tr>
+			
+			<tr>
+				<td>10</td>
+				<td>The Lord of the Rings: The Return of the King</td>
+				<td>2003</td>
+			</tr>
+			
+		</table>
+	</body>
+	
+</html>
+
+_____________________________________________________________________________________________________________
+
+QUESTION 10
+
+<!DOCTYPES html>
+<html>
+<head>
+<title>activity 10</title>
+<style>
+h1 {
+text-shadow: 2px 4px yellow;
+color:blue;
+}
+div.over {
+width:200px;
+overflow:hidden;
+border:2px solid black;
+}
+div.over1 {
+white-space:nowrap;
+width:200px;
+overflow:hidden;
+border:2px solid black;
+}
+</style>
+</head>
+<body>
+<h1>ACTIVITY 10</h1>
+<div class="over1" style="text-overflow:clip">
+My Name is Rishabh Poddar
+</div><br>
+<div class="over1" style="text-overflow:ellipsis">
+I am a Web Developer
+</div><br>
+<div class="over1" style="text-overflow:string">
+I am also a Student
+</div><br>
+<div class="over" style="text-overflow:inherit">
+at VIT University
+</div><br><br>
+<img src="abc.jpeg" style="width:200px;length:200px;float:right;"></img>
+</body>
+</html>
+
+________________________________________________________________________________________________________
+
+
